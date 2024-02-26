@@ -1084,13 +1084,13 @@ function iterateThroughString(str) {
     firstNum = numMap.get(Math.min(...numMap.keys()));
   }
 
-  // define the second digit for the number using the same highest index in the numMap Map
+  // define the second digit for the number using the highest index in the numMap Map
   if (typeof numMap.get(Math.max(...numMap.keys())) === "string") {
     secondNum = numMapOrig.get(numMap.get(Math.max(...numMap.keys())));
   } else {
     secondNum = numMap.get(Math.max(...numMap.keys()));
   }
-  // turn the numbers to string to concatenate them, then turn the two digit string to number type
+  // turn the numbers to string and concatenate them, then turn the two digit string to typeof number
   return Number(String(firstNum) + String(secondNum));
 }
 
@@ -1101,35 +1101,3 @@ for (const x of adventFirstDay) {
   sumPart2 += iterateThroughString(x);
 }
 console.log(sumPart2);
-
-// const fvg = function (str) {
-//   for (const char of str) {
-//     if (num.includes(char)) {
-//       return char;
-//     }
-//   }
-// };
-
-// const fvgRev = function (str) {
-//   let splitString = str.split("");
-//   let reverseArray = splitString.reverse();
-//   let joinArray = reverseArray.join("");
-//   for (const char of joinArray) {
-//     if (num.includes(char)) {
-//       return char;
-//     }
-//   }
-// };
-
-// //const elsoSzam = fvg(proba) + fvgRev(proba);
-// //console.log(Number(elsoSzam));
-
-// const exampleProba = function (arr) {
-//   let sum = 0;
-//   for (let i = 0; i < arr.length; i++) {
-//     sum = sum + Number(fvg(arr[i]) + fvgRev(arr[i]));
-//   }
-//   return sum;
-// };
-
-// console.log(exampleProba(adventFirstDay));
